@@ -10,3 +10,9 @@ sleep 5
 python3 -m http.server "$PUERTO_HTTP" &
 
 sleep 30
+
+servicio_tcpdump =$(pgrep tcpdump)
+servicio_python3 =$(pgrep python3)
+
+kill "$servicio_tcpdump"
+kill "$servicio_python3"
